@@ -1,0 +1,22 @@
+
+<div [ngClass]="{'post': true,
+    'bg-danger': getLoveIts() < 0,
+    'bg-success': getLoveIts() > 0}">
+    <div class="fig">
+        <figure class="fig_post" style="background-image: url(assets/img/code1.jpg);">
+        </figure>
+    </div>
+    <div class="">
+        <div>
+            <h4><a data-toggle="modal" data-target="#modal-coming" href="#copyright" (click)="demo()">{{ title }}</a></h4>
+            <p class="text-left">Publié le <em>{{ created_at | date: "short" }}</em></p>
+            <p>{{ content }}<a data-toggle="modal" data-target="#modal-coming" href="#copyright" (click)="demo()">lire plus</a></p>
+        </div>
+        <div class="rate">
+          <em>{{ getLike() }}</em>
+          <i class="fas fa-thumbs-up" (click)="setLike()" alt="love it"></i>
+          <i class="fas fa-thumbs-down" (click)="setUnLike()" alt="don't love it"></i>
+          <em>{{ getUnLike() }}</em>
+        </div>
+    </div>
+</div>
